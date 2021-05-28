@@ -26,14 +26,4 @@ function readline() {
 }
 // Make a Snippet for the code above this and then write your logic in main();
 
-function main() {
-  const x = readline();
-  var line2 = readline();
-
-  foo(x);
-  foo(line2);
-}
-function foo(x) {
-  process.stdout.write("hello: "); // without auto '\n' (newline)
-  console.log(x); // with auto '\n' (newline)
-}
+function main() {}
