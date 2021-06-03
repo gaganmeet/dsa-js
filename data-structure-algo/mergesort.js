@@ -53,6 +53,7 @@ function main() {
     }
     return res;
   }
+  
   function mergeSort(arr, lo, hi) {
     if (lo == hi) {
       let ba = [];
