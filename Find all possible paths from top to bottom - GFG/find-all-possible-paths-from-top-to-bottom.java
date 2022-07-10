@@ -98,8 +98,6 @@ class Solution {
         res = new ArrayList<>();
         ArrayList<Integer> path = new ArrayList<>();
         gridTrav(grid, grid.length-1, grid[0].length-1,0,0, path);
-        // List<ArrayList<Integer>> res = new ArrayList<>();
-        // System.out.println("res"+ res);
         return res;
     }
     static void gridTrav(int mat[][], int m,int n, int i, int j, ArrayList<Integer> path){
@@ -108,7 +106,6 @@ class Solution {
         path.add(mat[i][j]);
         if(i==m&&j==n){
             res.add(new ArrayList(path));
-            // System.out.println(path);
         }
         gridTrav(mat, m, n, i+1, j, path);
         gridTrav(mat, m, n, i, j+1, path);
