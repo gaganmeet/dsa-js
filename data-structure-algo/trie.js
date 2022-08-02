@@ -42,6 +42,27 @@ class Trie {
     }
     return true
   }
+  // find longest word that can be built one character at a time
+  findLongest() {
+    // children is an object
+
+    let curr = this.root
+    let longest = ''
+    let stack = []
+    for (let char in curr.children) {
+      stack.push(char)
+    }
+    while (stack.length) {
+      let char = stack.pop()
+      if (curr.children[char].isEndOfWord) {
+        longest += char
+      }
+      for (let child in curr.children[char].children) {
+        stack.push(child)
+      }
+    }
+    return longest
+  }
 }
 
 const trie = new Trie()
@@ -57,5 +78,4 @@ console.log(trie.contains('app'))
 console.log(trie.contains('apts'))
 console.log(trie.contains('ap'))
 console.log(trie.contains('ball'))
-console.log(trie.startsWith('ap'))
-
+console.log(trie.startsWith('app'))
